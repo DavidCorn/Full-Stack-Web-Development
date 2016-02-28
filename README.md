@@ -1,11 +1,11 @@
 # Full-Stack-Web-Development
 
 Contact info:
-Name: Qiyao Qin
-Email: qqin@andrew.cmu.edu
+- Name: Qiyao Qin
+- Email: qqin@andrew.cmu.edu
 
 This is a series of Coursera courses.
-The course mainly contains six topis
+The course mainly contains six topics
 - HTML, CSS and JavaScript
 - Front-End Web UI Frameworks and Tools
 - Front-End JavaScript Frameworks: AngularJS
