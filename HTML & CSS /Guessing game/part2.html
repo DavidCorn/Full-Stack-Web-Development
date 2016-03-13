@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Color Guessing Game</title>
+    </head>
+    
+    <body onload="do_game()">
+       <script>
+           var color = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+var finish = false;
+
+var target;
+var guess = 0;
+
+var guess_input_text;
+
+function do_game() {
+    var index = Math.random() * (color.length - 1);
+    target = color[Math.floor(index)];
+    alert("Target color is: " + target);
+    
+    while (!finish) {
+        guess_input_text = prompt("I am thinking of one of these colors:\n\n" + color + "\n\n" 
+                                  + "What color am I thinking of?");
+        guess++;
+        
+        finish = check_guess();
+    }
+}
+
+function check_guess() {
+    var contain = false;
+    for (var i = 0; i < color.length; i++) {
+        if (guess_input_text == color[i]) {
+            contain = true;
+        }
+    }
+    
+    if (!contain) {
+        alert("Sorry, I don't recognize your color.\n\nPlease try again.");
+        return false;
+    } else {
+        if (guess_input_text > target) {
+            alert("Sorry, your guess is incorrect!\n\n" 
+                  + "Hint: your color is alphabetically higher than mine.\n\n" 
+                  + "Please try again.");
+            return false;
+        }
+        
+        if (guess_input_text < target) {
+            alert("Sorry, your guess is incorrect!\n\n" 
+                  + "Hint: your color is alphabetically lower than mine.\n\n" 
+                  + "Please try again.");
+            return false;
+        }
+        
+        if (guess_input_text == target) {
+            // change background color
+            document.body.style.backgroundColor = target;
+            
+            alert("Congratulations! You have guessed the color!\n\n" 
+                  + "It took you " + guess + " guesses to finish the game!\n\n" 
+                  + "You can see the colour in the background.");
+            
+            return true;
+        }
+    }
+    
+}
+        </script>     
+    </body>
+</html>
