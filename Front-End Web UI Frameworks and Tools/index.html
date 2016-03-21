@@ -53,6 +53,13 @@
                         </li>
                         <li><a href="http://127.0.0.1:60574/Front-End%20Web%20UI%20Frameworks%20and%20Tools/Week%201/contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id="myLogin">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                    </ul>
+                    
+                    <!--
                     <form class="navbar-form navbar-right">
                         <div class="form-group custom">
                             <input type="text" class="form-control" placeholder="Email">
@@ -61,9 +68,34 @@
                             <button type="submit" class="btn btn-primary">Sign in</button>
                         </div>
                     </form>
+                    -->
                 </div>
             </div>
-        </nav>  
+        </nav>
+        <div id="loginModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                        <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Login </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-inline">
+                                        <div class="form-group custom">
+                                            <div class="row">
+                                                <input type="text" class="form-control" placeholder="Email">
+                                                <input type="text" class="form-control" placeholder="Password">
+                                                <input type="checkbox"> Remember me
+                                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
     <header class="jumbotron">
         <!-- Main component for a primary marketing message or call to action -->
@@ -81,7 +113,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-2">
                         <p style="padding:40px;"></p>
-                        <a type="submit" style="button" data-target="#reserve_table" class="btn btn-warning bottomleft" data-toggle="modal">Reserve Table</a>
+                        <a id="reserveTable" type="submit" style="button" class="btn btn-warning bottomleft">Reserve Table</a>
                     </div>
                 </div>
             </div>
@@ -369,6 +401,18 @@
                     $("#mycarousel").carousel('cycle');
                 });
                 
+            });
+            
+            $(document).ready(function() {
+               $("#myLogin").click(function() {
+                   $("#loginModal").modal();
+               }); 
+            });
+            
+            $(document).ready(function() {
+                $("#reserveTable").click(function() {
+                    $("#reserve_table").modal();
+                });
             });
         </script>
 </body>
