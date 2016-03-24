@@ -1,2 +1,2 @@
 #Dating Website
-![screenshot of dating website]("./Dating_website.png")
+![screenshot of dating website]("/img/dating_website.png")
